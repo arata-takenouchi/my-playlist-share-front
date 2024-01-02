@@ -1,0 +1,14 @@
+version: '3.9'
+services:
+  frontend:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: my-playlist-share-front
+    working_dir: /my-playlist-share-front
+    volumes:
+    # マウント先の変更
+      - ./app:/my-playlist-share-front
+      - /my-playlist-share-front/node_modules
+    ports:
+      - "3001:3001"

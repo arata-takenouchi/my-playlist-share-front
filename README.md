@@ -5,6 +5,11 @@
 * vite v4.5.0
 * typescript v5.0.2
 * react v18.2.0
+* tailwindcss v3.4.0
+
+## cssについて
+* tailwindcssを使用(↓ドキュメント)
+* https://tailwindcss.com/docs/installation
 
 ## 初回起動
 * githubからclone

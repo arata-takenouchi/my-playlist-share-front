@@ -1,7 +1,6 @@
 import React from 'react'
 import ReactDOM from 'react-dom/client'
 import Top from '@/Top.tsx'
-import List from '@/List.tsx'
 import {
   createBrowserRouter,
   RouterProvider,
@@ -11,10 +10,6 @@ const router = createBrowserRouter([
   {
     path: "/",
     element: <Top />,
-  },
-  {
-    path: "/list",
-    element: <List />,
   },
 ]);
 

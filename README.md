@@ -19,25 +19,39 @@
 * packageのインストールと起動
 
 ```sh
+# ホスト側のプロジェクト直下で下記コマンドを実行
 docker compose build
 docker compose up
+cd app
+#  tailwindcssを起動
+#  configで設定したファイルを監視し、自動で必要なcssを出力する仕組みのため、watchが必要
+npx tailwindcss -i ./src/assets/input.css -o ./src/assets/output.css --watch
+```
+
+## 2回目以降の起動
+```sh
+# 
+docker compose up
+npx tailwindcss -i ./src/assets/input.css -o ./src/assets/output.css --watch
 ```
 
 ## パッケージを追加するとき
 
-* コンテナ内で下記コマンドを実行
+* ホスト側でもpackageをinstallする
+* ホスト側にて「packageが無い」とerrorになっているのを消すため(気にならなければホスト側のinstallは省いてもOK)
+* 初回起動の手順を行えばコンテナ内にはpackageがインストールされているので、動作上は問題ないが、ホスト側ではpackageが存在しない扱いになってしまうため
 
 ```sh
+#  コンテナ内で下記コマンドを実行
 npm install -D xxx
+#  ホスト側のプロジェクトフォルダ直下で下記コマンドを実行
+npm --prefix ./app ci ./app
 ```
 
-## localにもpackageをinstallしたい場合
 
-* ホスト側にて「packageが無い」とerrorになっているのを消したい場合
-* 初回起動の手順を行えばコンテナ内にはpackageがインストールされているので、動作上は問題ないが、ホスト側ではpackageが存在しない扱いになってしまうため
-* プロジェクトフォルダ直下で下記コマンドを実行
 
 ```sh
+#  ホスト側のプロジェクトフォルダ直下で下記コマンドを実行
 npm --prefix ./app ci ./app
 ```
 

@@ -1,6 +1,5 @@
 import { useState } from 'react'
 import { Link } from 'react-router-dom'
-import '@/assets/Top.scss'
 import List from '@/List'
 
 function Top() {

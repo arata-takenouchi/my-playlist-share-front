@@ -6,7 +6,6 @@ import {
   createBrowserRouter,
   RouterProvider,
 } from "react-router-dom";
-import '@/assets/index.scss'
 
 const router = createBrowserRouter([
   {

@@ -1,22 +1,32 @@
+import { Link } from "react-router-dom"
+import { useLocation } from "react-router-dom";
+
 function Header() {
+  const pathname: string = useLocation().pathname
+  const path = pathname === "/" ? "/create-playlist" : "/"
+  const label = pathname === "/" ? "プレイリストを作成" : "プレイリスト一覧に戻る"
 
   return (
     <>
       <div className="navbar bg-base-100">
-        <div className="flex-1">
-          <a className="btn btn-ghost text-xl">daisyUI</a>
-        </div>
+        <h1 className="flex-1">
+          <a className="btn btn-ghost text-xl">MyPlaylistShare</a>
+        </h1>
         <div className="flex-none">
           <ul className="menu menu-horizontal px-1">
-            <li><a>Link</a></li>
             <li>
-              <details>
+              <Link to={`${path}`}>
+                <button className="btn btn-success">{ label }</button>
+              </Link>
+            </li>
+            <li>
+              <details className="w-40">
                 <summary>
-                  Parent
+                  設定
                 </summary>
                 <ul className="p-2 bg-base-100 rounded-t-none">
-                  <li><a>Link 1</a></li>
                   <li><a>Link 2</a></li>
+                  <li><a>ログアウト</a></li>
                 </ul>
               </details>
             </li>

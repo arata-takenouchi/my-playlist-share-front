@@ -5,6 +5,7 @@ function Header() {
   const pathname: string = useLocation().pathname
   const path = pathname === "/" ? "/create-playlist" : "/"
   const label = pathname === "/" ? "プレイリストを作成" : "プレイリスト一覧に戻る"
+  const labelClass = pathname === "/" ? "btn btn-success" : "btn btn-gray"
 
   return (
     <>
@@ -16,7 +17,7 @@ function Header() {
           <ul className="menu menu-horizontal px-1">
             <li>
               <Link to={`${path}`}>
-                <button className="btn btn-success">{ label }</button>
+                <button className={labelClass}>{ label }</button>
               </Link>
             </li>
             <li>

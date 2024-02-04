@@ -45,7 +45,7 @@ function List() {
               <td>Purple</td>
               <th>
                 {/* Open the modal using document.getElementById('ID').showModal() method */}
-                <button className="btn btn-ghost btn-xs" onClick={()=>document.getElementById('my_modal_2').showModal()}>details</button>
+                <button className="btn btn-ghost btn-xs" onClick={()=>(document.getElementById('my_modal_2') as HTMLDialogElement).showModal()}>details</button>
                 <dialog id="my_modal_2" className="modal">
                   <div className="modal-box">
                   <form method="dialog">
@@ -97,7 +97,7 @@ function List() {
               <td>Red</td>
               <th>
                 {/* Open the modal using document.getElementById('ID').showModal() method */}
-                <button className="btn btn-ghost btn-xs" onClick={()=>document.getElementById('my_modal_2').showModal()}>details</button>
+                <button className="btn btn-ghost btn-xs" onClick={()=>(document.getElementById('my_modal_2') as HTMLDialogElement).showModal()}>details</button>
                 <dialog id="my_modal_2" className="modal">
                   <div className="modal-box">
                   <form method="dialog">
